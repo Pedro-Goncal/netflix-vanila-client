@@ -1,4 +1,4 @@
-# Netflix Clone Vanila JavaScript Showcase
+# Netflix Clone Showcase Vanila JavaScript
 
 Pure vanila JavaScript Netflix lookalike Showcase app
 
