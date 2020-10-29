@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Netflix Clone</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
     <script src="script.js"></script>
@@ -18,6 +32,43 @@
       </div>
     </header>
     <main>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="trailerModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+        data-target=".bd-example-modal-lg"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!--Header -->
+              <span id="title" class="movie-title"></span>
+              <span id="rating" class="movie-rating"></span>
+            </div>
+            <div class="modal-body">
+              <span class="movie-notFound"
+                >Oops it looks like this trailer is not available</span
+              >
+              <iframe
+                id="movieTrailer"
+                width="560"
+                height="315"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="modal-footer">
+              <!-- Footer -->
+              <span id="overview" class="movie-overview"></span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="featured">
         <h2>Title</h2>
         <div class="featured__buttons">
@@ -65,5 +116,15 @@
         </div>
       </div>
     </main>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

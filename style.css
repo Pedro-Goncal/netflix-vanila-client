@@ -158,3 +158,41 @@ img {
   z-index: 10;
   margin-top: 20px;
 }
+
+.modal-content {
+  background: #111;
+  
+}
+
+.modal-body iframe {
+  width: 100%;
+}
+
+.movie-notFound {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+
+}
+
+
+
+.movie-overview, .movie-title, .movie-rating {
+  font-family: 'Lato', sans-serif;
+  color: rgb(196, 196, 196);
+  
+}
+
+.movie-title {
+  font-size: 20px;
+  
+}
+
+.movie-overview {
+  padding: 10px;
+  
+}
