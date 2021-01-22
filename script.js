@@ -24,9 +24,10 @@ window.onload = () => {
   fetchMovies(horrorMovies, ".horror__movies", "backdrop_path");
   fetchMovies(romanceMovies, ".romance__movies", "backdrop_path");
   fetchMovies(documentaries, ".documentaries", "backdrop_path");
+  getWishlist();
 };
 
-function fetchMovies(url, className, path) {
+const fetchMovies = (url, className, path) => {
   fetch(url)
     .then((response) => {
       if (response.ok) {
@@ -41,9 +42,9 @@ function fetchMovies(url, className, path) {
     .catch((error) => {
       console.log(error);
     });
-}
+};
 
-function showMovies(movies, className, path) {
+const showMovies = (movies, className, path) => {
   const moviesEl = document.querySelector(className);
 
   for (let movie of movies.results) {
@@ -55,7 +56,7 @@ function showMovies(movies, className, path) {
 
     moviesEl.appendChild(imageElement);
   }
-}
+};
 
 /*
 ===============Movie Trailer===============
@@ -118,4 +119,30 @@ const setTrailer = (trailers) => {
     overview.classList.add("d-none");
     title.classList.add("d-none");
   }
+};
+
+/*
+================WISHLIST==============
+*/
+
+const getWishlist = () => {
+  fetch("http://localhost:4001/wishlist", {
+    headers: {
+      Authorization: `${localStorage.getItem("token")}`,
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong");
+      }
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      logOut();
+      console.log(err);
+    });
 };
